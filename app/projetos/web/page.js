@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import SceneWrapper from "../../../components/SceneWrapper";
 import WebScene from "../../../components/scenes/WebScene";
 import Navbar from "../../../components/Navbar";
 
@@ -8,12 +8,10 @@ export default function WebPage() {
   return (
     <>
       <Navbar />
-
       <div className="scene-page">
-        <Canvas>
+        <SceneWrapper>
           <WebScene />
-        </Canvas>
-
+        </SceneWrapper>
         <div className="overlay">
           <h1>Web Experience</h1>
           <p>Interfaces modernas e interativas</p>

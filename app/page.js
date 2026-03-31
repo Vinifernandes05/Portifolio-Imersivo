@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import SceneBackground from "../components/SceneBackground";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -38,10 +39,27 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="sobre">
         <div className="hero-content">
+
+          {/* FOTO DE PERFIL */}
+          <Image
+            src="/images/perfil.jpeg"
+            alt="Vinicius Fernandes"
+            width={150}
+            height={150}
+            style={{
+              borderRadius: "50%",
+              border: "3px solid #0ea5e9",
+              boxShadow: "0 0 25px #0ea5e9",
+              marginBottom: "20px"
+            }}
+          />
+
           <h1 className="title">Vinicius Fernandes</h1>
+
           <p className="subtitle">
             Experiências digitais com engenharia e impacto
           </p>
+
         </div>
 
         <div className="hero-bg"></div>
