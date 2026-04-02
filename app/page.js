@@ -12,10 +12,24 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".title", {
-      y: 100,
+    gsap.from(".hero-image", {
+      scale: 0.5,
       opacity: 0,
-      duration: 1.5
+      duration: 1.2
+    });
+
+    gsap.from(".title", {
+      y: 80,
+      opacity: 0,
+      duration: 1.2,
+      delay: 0.3
+    });
+
+    gsap.from(".subtitle", {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      delay: 0.6
     });
 
     gsap.utils.toArray("section").forEach(section => {
@@ -38,31 +52,26 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" id="sobre">
-        <div className="hero-content">
+        <div className="hero-container">
 
-          {/* FOTO DE PERFIL */}
-          <Image
-            src="/images/perfil.jpeg"
-            alt="Vinicius Fernandes"
-            width={150}
-            height={150}
-            style={{
-              borderRadius: "50%",
-              border: "3px solid #0ea5e9",
-              boxShadow: "0 0 25px #0ea5e9",
-              marginBottom: "20px"
-            }}
-          />
+          <div className="hero-image">
+            <Image
+              src="/images/perfil.jpeg"
+              alt="Vinicius Sousa Fernandes"
+              width={180}
+              height={180}
+            />
+          </div>
 
-          <h1 className="title">Vinicius Fernandes</h1>
+          <div className="hero-text">
+            <h1 className="title">Vinicius Sousa Fernandes</h1>
 
-          <p className="subtitle">
-            Experiências digitais com engenharia e impacto
-          </p>
+            <p className="subtitle">
+              Experiências digitais com engenharia e impacto
+            </p>
+          </div>
 
         </div>
-
-        <div className="hero-bg"></div>
       </section>
 
       {/* STORY */}
@@ -85,15 +94,43 @@ export default function Home() {
 
       {/* SKILLS */}
       <section className="skills">
-        <h2>Tecnologias</h2>
-        <div className="tech">JavaScript</div>
-        <div className="tech">Node.js</div>
-        <div className="tech">Python</div>
+        <h2 className="skills-title">Tecnologias</h2>
+
+        <div className="tech-list">
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>Python</span>
+          <span>Java</span>
+          <span>C++</span>
+          <span>SQL (Oracle)</span>
+        </div>
       </section>
 
       {/* CONTATO */}
       <section className="contact">
-        <h2>Vamos construir algo incrível?</h2>
+        <h2 className="contact-title">Vamos construir algo incrível?</h2>
+
+        <div className="contact-container">
+
+          <a href="mailto:vinifernandes2005@gmail.com" className="contact-card">
+            📧
+            <span>Email</span>
+            <p>vinifernandes2005@gmail.com</p>
+          </a>
+
+          <a href="https://github.com/Vinifernandes05" target="_blank" className="contact-card">
+            💻
+            <span>GitHub</span>
+            <p>Vinifernandes05</p>
+          </a>
+
+          <a href="https://www.linkedin.com/in/viniciussousaf" target="_blank" className="contact-card">
+            🔗
+            <span>LinkedIn</span>
+            <p>viniciussousaf</p>
+          </a>
+
+        </div>
       </section>
 
       <footer className="footer">

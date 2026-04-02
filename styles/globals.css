@@ -207,3 +207,116 @@ body {
     background: #020617;
     color: #64748b;
 }
+
+/* HERO */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.hero-image img {
+  border-radius: 50%;
+  border: 3px solid #0ea5e9;
+  box-shadow: 0 0 30px #0ea5e9;
+  margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills-title {
+  color: #0ea5e9;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tech-list span {
+  background: rgba(14,165,233,0.15);
+  color: #38bdf8;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid #0ea5e9;
+  transition: 0.3s;
+}
+
+.tech-list span:hover {
+  background: #0ea5e9;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* CONTACT UPGRADE */
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #0ea5e9;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-card {
+  background: rgba(14,165,233,0.1);
+  border: 1px solid rgba(14,165,233,0.4);
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 260px;
+  text-decoration: none;
+  color: white;
+  transition: 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.contact-card span {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #38bdf8;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin-top: 5px;
+  word-break: break-word;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: #0ea5e9;
+  color: black;
+  box-shadow: 0 0 30px #0ea5e9;
+}
+
+.contact-card:hover span,
+.contact-card:hover p {
+  color: black;
+}
+
