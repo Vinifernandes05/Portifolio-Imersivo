@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 const styles = {
   header: {
@@ -18,29 +19,123 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
   },
+
   nav: {
     display: "flex",
     alignItems: "center",
     gap: "40px",
   },
+
   link: {
     color: "rgba(255,255,255,0.85)",
     textDecoration: "none",
     fontSize: "0.95rem",
     fontWeight: 500,
     letterSpacing: "0.05em",
-    transition: "color 0.2s",
+    position: "relative",
+    transition: "0.3s",
+  },
+
+  hoverEffect: {
+    color: "#0ea5e9",
+    transform: "scale(1.1)",
+  },
+
+  dropdown: {
+    position: "relative",
+  },
+
+  dropdownMenu: {
+    position: "absolute",
+    top: "30px",
+    left: 0,
+    background: "rgba(0,0,0,0.9)",
+    padding: "10px",
+    borderRadius: "8px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    minWidth: "120px",
   },
 };
 
 export default function Navbar() {
+  const [hovered, setHovered] = useState(null);
+  const [open, setOpen] = useState(false);
+
   return (
     <header style={styles.header}>
       <nav style={styles.nav}>
-        <Link href="/" style={styles.link}>Home</Link>
-        <Link href="/projetos/robo" style={styles.link}>Robô</Link>
-        <Link href="/projetos/sistema" style={styles.link}>Sistema</Link>
-        <Link href="/projetos/web" style={styles.link}>Web</Link>
+
+        {/* HOME */}
+        <Link
+          href="/"
+          style={{
+            ...styles.link,
+            ...(hovered === "home" ? styles.hoverEffect : {}),
+          }}
+          onMouseEnter={() => setHovered("home")}
+          onMouseLeave={() => setHovered(null)}
+        >
+          Home
+        </Link>
+
+        {/* PROJETOS (DROPDOWN) */}
+        <div
+          style={styles.dropdown}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
+          <span
+            style={{
+              ...styles.link,
+              ...(hovered === "projetos" ? styles.hoverEffect : {}),
+              cursor: "pointer",
+            }}
+            onMouseEnter={() => setHovered("projetos")}
+            onMouseLeave={() => setHovered(null)}
+          >
+            Projetos
+          </span>
+
+          {open && (
+            <div style={styles.dropdownMenu}>
+              <Link href="/projetos/robo" style={styles.link}>
+                Robô
+              </Link>
+              <Link href="/projetos/sistema" style={styles.link}>
+                Sistema
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* CURSOS */}
+        <Link
+          href="/cursos"
+          style={{
+            ...styles.link,
+            ...(hovered === "cursos" ? styles.hoverEffect : {}),
+          }}
+          onMouseEnter={() => setHovered("cursos")}
+          onMouseLeave={() => setHovered(null)}
+        >
+          Cursos
+        </Link>
+
+        {/* CONTATO */}
+        <Link
+          href="/contato"
+          style={{
+            ...styles.link,
+            ...(hovered === "contato" ? styles.hoverEffect : {}),
+          }}
+          onMouseEnter={() => setHovered("contato")}
+          onMouseLeave={() => setHovered(null)}
+        >
+          Contato
+        </Link>
+
       </nav>
     </header>
   );
