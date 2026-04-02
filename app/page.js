@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-      <section className="contact">
+      <section className="contact" id="contato">
         <h2 className="contact-title">Vamos construir algo incrível?</h2>
 
         <div className="contact-container">

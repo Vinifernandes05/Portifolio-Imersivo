@@ -124,17 +124,18 @@ export default function Navbar() {
         </Link>
 
         {/* CONTATO */}
-        <Link
-          href="/contato"
-          style={{
-            ...styles.link,
-            ...(hovered === "contato" ? styles.hoverEffect : {}),
-          }}
-          onMouseEnter={() => setHovered("contato")}
-          onMouseLeave={() => setHovered(null)}
-        >
-          Contato
-        </Link>
+     
+<a
+  href="#contato"
+  style={{
+    ...styles.link,
+    ...(hovered === "contato" ? styles.hoverEffect : {}),
+  }}
+  onMouseEnter={() => setHovered("contato")}
+  onMouseLeave={() => setHovered(null)}
+>
+  Contato
+</a>
 
       </nav>
     </header>

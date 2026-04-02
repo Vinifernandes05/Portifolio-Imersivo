@@ -320,3 +320,6 @@ body {
   color: black;
 }
 
+html {
+  scroll-behavior: smooth;
+}
